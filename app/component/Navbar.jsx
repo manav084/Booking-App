@@ -4,7 +4,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='bg-indigo-600 text-white px-8 py-6 space-y-8 shadow-md'>
+    <div className='bg-indigo-600 text-white px-8 pt-6 pb-12  shadow-md'>
 
       {/* Top Navbar Section */}
       <div className='flex justify-between items-center'>
@@ -20,7 +20,7 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className='max-w-4xl mx-auto'>
+      <div className='max-w-4xl  py-4 mx-auto'>
         <ul className='flex justify-between text-sm font-medium text-indigo-100'>
           <li className='hover:text-white cursor-pointer transition'>Stays</li>
           <li className='hover:text-white cursor-pointer transition'>Flights</li>

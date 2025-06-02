@@ -10,10 +10,10 @@ export default function Home() {
     <div className=" container">
 
   
-    <div className="relative">
+    <div className="relative mb-8">
 
     <Navbar />
-    <div className="absolute min-w-1/2 left-[50%] -translate-x-[50%]" >
+    <div className="absolute z-[9999] min-w-[60vw] bottom-[0px] translate-y-1/2 left-[50%] -translate-x-[50%]" >
     <Searchbar />
 
     </div>
