@@ -25,10 +25,10 @@ const Counter = ({handleChild, setCountData}) => {
     ])
 
     useEffect(() => {
-      handleChild(count)
+      setCountData(count)
     
      
-    }, [])
+    },)
     
     const handleChange = (index, operation) => {
 

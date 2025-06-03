@@ -36,7 +36,16 @@ const Searchbar = () => {
   const [toggleDate, setToggleDate] = useState(false);
   const [toggleCount, setToggleCount] = useState(false);
 
-  const[countData, setCountData ] = useState([]);
+  const[countData, setCountData ] = useState([ {
+            name: "Adult",
+            value: 0
+        }, {
+            name: "Child",
+            value: 0
+        }, {
+            name: "Rooms",
+            value: 0
+        }]);
 
   const handleChild = (a)=> {
           setCountData(a);
