@@ -5,6 +5,7 @@ import "react-date-range/dist/theme/default.css";
 
 import { Calendar, DateRangePicker } from "react-date-range";
 import format from "date-fns/format";
+import Counter from "./Counter";
 
 const Searchbar = () => {
   // function formatDate(date) {
@@ -59,6 +60,7 @@ const Searchbar = () => {
         <span className="text-gray-400 cursor-pointer">
           0- Adult 0-child 0- room
         </span>
+        <Counter />
       </div>
     </>
   );
