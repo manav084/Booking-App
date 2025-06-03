@@ -1,8 +1,15 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Counter = () => {
+const Counter = ({handleChild, setCountData}) => {
+  
+
+//  const [demo , setDemo ] = useState({
+//     adult:0,
+//     child:0,
+//     rooms:0
+//  });
 
     const [count, setCount] = useState([
         {
@@ -16,6 +23,13 @@ const Counter = () => {
             value: 0
         }
     ])
+
+    useEffect(() => {
+      handleChild(count)
+    
+     
+    }, [])
+    
     const handleChange = (index, operation) => {
 
         setCount((prevValue)=>{

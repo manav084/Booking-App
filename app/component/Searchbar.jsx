@@ -34,6 +34,13 @@ const Searchbar = () => {
   ]);
 
   const [toggleDate, setToggleDate] = useState(false);
+  const [toggleCount, setToggleCount] = useState(false);
+
+  const[countData, setCountData ] = useState([]);
+
+  const handleChild = (a)=> {
+          setCountData(a);
+  }
 
   return (
     <>
@@ -57,10 +64,13 @@ const Searchbar = () => {
               />
               </div>
           )}
-        <span className="text-gray-400 cursor-pointer">
-          0- Adult 0-child 0- room
+        <span onClick={()=>setToggleCount(!toggleCount)} className="text-gray-400 cursor-pointer">
+          {countData[0].value}- Adult {countData[1].value}-child {countData[2].value}- room
         </span>
-        <Counter />
+        {setToggleCount && (
+           <Counter handleChild = {handleChild} setCountData = {setCountData}  />
+          
+        )}
       </div>
     </>
   );
