@@ -76,8 +76,12 @@ const Searchbar = () => {
         <span onClick={()=>setToggleCount(!toggleCount)} className="text-gray-400 cursor-pointer">
           {countData[0].value}- Adult {countData[1].value}-child {countData[2].value}- room
         </span>
-        {setToggleCount && (
-           <Counter handleChild = {handleChild} setCountData = {setCountData}  />
+        {toggleCount && (
+           <div className="absolute top-16 right-20 border-[1px] shadow-2xl"> 
+
+             <Counter handleChild = {handleChild}   />
+           </div>
+
           
         )}
       </div>
