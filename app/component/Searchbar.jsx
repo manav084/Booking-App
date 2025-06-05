@@ -84,6 +84,7 @@ const Searchbar = () => {
 
           
         )}
+        <button className="bg-blue-600 p-2 text-white cursor-pointer">Search</button>
       </div>
     </>
   );
