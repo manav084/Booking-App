@@ -1,9 +1,10 @@
+"use client"
 import React from 'react'
 
 const Card = () => {
   return (
     <>
-    <div className='flex border-2 rounded-md gap-4 p-[10px] border-gray-500 max-w-fit'>
+    <div className='flex border-2 rounded-md gap-4 p-[10px] border-gray-500 max-w-fit max-h-fit'>
         <img className='max-h-[28vh]' src="https://cf.bstatic.com/xdata/images/hotel/square600/261707778.webp?k=fa6b6128468ec15e81f7d076b6f2473fa3a80c255582f155cae35f9edbffdd78&o=&s=1" alt="" />
 
         <div className='flex flex-col min-w-[36vw]'>

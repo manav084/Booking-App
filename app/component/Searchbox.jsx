@@ -3,7 +3,7 @@ import React from 'react'
 const Searchbox = () => {
   return (
    <>
-   <div className='bg-yellow-400 max-w-1/4 flex flex-col  p-10 gap-4 rounded-3xl  '>
+   <div className='bg-yellow-400 min-w-1/4 flex flex-col  p-10 gap-4 rounded-3xl  '>
     <h1 className='text-gray-800 font-bold text-3xl'>Search</h1>
     <section className='flex flex-col'>
     <label htmlFor="">Destination</label>
