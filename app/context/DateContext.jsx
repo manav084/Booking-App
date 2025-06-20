@@ -4,7 +4,10 @@ import {createContext, useContext, useState, useEffect} from 'react'
  const DateContext = createContext();
  export const DateProvider = ({children}) =>{
     const [date,setDate]= useState(null)
-    useEffect(() => {
+   
+ 
+     useEffect(() => {
+        if(!date){
         setDate([
         {
             startDate: new Date(),
@@ -12,9 +15,9 @@ import {createContext, useContext, useState, useEffect} from 'react'
       key: 'selection',
         },
     ])
+}
     }, [])
-    
-    const DateContext = () => {
+   
         return (
             
             
@@ -24,6 +27,5 @@ import {createContext, useContext, useState, useEffect} from 'react'
             
         )
     }
-}
 
 export const useDate =() => useContext(DateContext);

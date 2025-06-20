@@ -1,8 +1,13 @@
-import React from 'react'
-import { useDate } from '../context/DateContext'
+"use client"
+import React, { useState } from 'react'
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 import format from "date-fns/format";
-const Searchbox = () => {
-   const {date, setDate} = useDate();
+
+import { DateRangePicker } from 'react-date-range';
+const Searchbox = ({date ,setDate}) => {
+   // const {date, setDate} = useDate();
+     const [toggleDate, setToggleDate] = useState(false);
   return (
    <>
    <div className='bg-yellow-400 min-w-1/4 flex flex-col  p-10 gap-4 rounded-3xl  '>
@@ -12,10 +17,20 @@ const Searchbox = () => {
     <input className='bg-white p-2 text-black ' type="text" name='' placeholder='location' />
     </section>
 
-    <section  className='flex flex-col'>
-    <label htmlFor="">Check-in Date</label>
-    <input  className='bg-white p-2 text-black' type="text" name='' placeholder= {format(date[0].startDate, "dd/MM/yyyy")} />
+    <section onClick={()=>setToggleDate(!toggleDate)}  className='flex flex-col'>
+    <label  htmlFor="datec">Check-in Date</label>
+    <input  className='bg-white p-2 text-black' type="text" name='datec' placeholder= {date && format(date[0].startDate, "dd/MM/yyyy")} />
     </section>
+      {toggleDate &&  (
+        <div className="absolute top-16 translate-x-[20%] border-[1px] shadow-2xl">
+            <DateRangePicker 
+              direction="vertical"
+              editableDateInputs={true}
+              ranges={date}
+              onChange={(item) => setDate([item.selection])}
+              />
+              </div>
+          )}
     <div>
         <h2>Options</h2>
         <div className='flex flex-col gap-2.5'>

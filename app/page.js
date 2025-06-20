@@ -6,9 +6,11 @@ import Hero from "./component/Hero";
 import Navbar from "./component/Navbar";
 import Searchbar from "./component/Searchbar";
 import { DateProvider, useDate } from "./context/DateContext";
+import { useEffect } from "react";
 
 export default function Home() {
   const {date ,setDate} = useDate();
+  
   return (
     <>
     <div className=" container">
