@@ -1,6 +1,8 @@
 import React from 'react'
-
+import { useDate } from '../context/DateContext'
+import format from "date-fns/format";
 const Searchbox = () => {
+   const {date, setDate} = useDate();
   return (
    <>
    <div className='bg-yellow-400 min-w-1/4 flex flex-col  p-10 gap-4 rounded-3xl  '>
@@ -12,7 +14,7 @@ const Searchbox = () => {
 
     <section  className='flex flex-col'>
     <label htmlFor="">Check-in Date</label>
-    <input  className='bg-white p-2 text-black' type="text" name='' placeholder='date' />
+    <input  className='bg-white p-2 text-black' type="text" name='' placeholder= {format(date[0].startDate, "dd/MM/yyyy")} />
     </section>
     <div>
         <h2>Options</h2>

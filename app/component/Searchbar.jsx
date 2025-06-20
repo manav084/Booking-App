@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-
 import { Calendar, DateRangePicker } from "react-date-range";
 import format from "date-fns/format";
 import Counter from "./Counter";
+import { useDate } from "../context/DateContext";
 
 const Searchbar = () => {
+  const {date, setDate} = useDate();
   // function formatDate(date) {
   //     const dd = String(date.getDate()).padStart(2, '0');
   //     const mm = String(date.getMonth() + 1).padStart(2, '0');
@@ -15,23 +16,15 @@ const Searchbar = () => {
   //     return `${dd}-${mm}-${yyyy}`;
   //   }
 
-  function handleSelect(ranges) {
-    console.log(ranges);
-    // {
-    //   selection: {
-    //     startDate: [native Date Object],
-    //     endDate: [native Date Object],
-    //   }
-    // }
-  }
+// const [date, setDate] = useState([
+//     {
+//       startDate: new Date(),
+//       endDate: new Date(),
+//       key: "selection",
+//     },
+//   ]);
 
-  const [date, setDate] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-  ]);
+
 
   const [toggleDate, setToggleDate] = useState(false);
   const [toggleCount, setToggleCount] = useState(false);
@@ -65,7 +58,7 @@ const Searchbar = () => {
 
           {toggleDate && (
         <div className="absolute top-16 translate-x-[20%] border-[1px] shadow-2xl">
-            <DateRangePicker
+            <DateRangePicker 
               direction="vertical"
               editableDateInputs={true}
               ranges={date}

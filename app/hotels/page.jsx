@@ -6,7 +6,7 @@ import Card from '../component/Card'
 const page = () => {
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
     <div className='flex justify-center gap-32 mt-9 min-h-screen'>
      <div className="sticky top-9 h-fit ">
 
